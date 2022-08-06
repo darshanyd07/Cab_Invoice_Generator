@@ -1,5 +1,6 @@
 package com.bl.CabInvoiceGenerator;
 
+
 public class InvoiceSummury
 {
 

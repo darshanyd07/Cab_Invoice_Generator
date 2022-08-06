@@ -1,13 +1,13 @@
 package com.bl.CabInvoiceGenerator;
 
 public class Ride {
-
     private double distance;
     private int time;
+    public RideCategories rideCategory;
 
-
-    public Ride(double distance, int time)
+    public Ride(RideCategories rideCategory, double distance, int time)
     {
+        this.rideCategory = rideCategory;
         this.distance = distance;
         this.time = time;
     }
