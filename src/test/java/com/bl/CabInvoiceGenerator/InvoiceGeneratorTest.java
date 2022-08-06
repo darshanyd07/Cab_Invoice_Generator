@@ -10,8 +10,7 @@ public class InvoiceGeneratorTest
 
 
     @Before
-    public void init()
-    {
+    public void init() {
         invoiceGenerator = new InvoiceGenerator();
     }
 
@@ -40,5 +39,14 @@ public class InvoiceGeneratorTest
         Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
         double fare = invoiceGenerator.calculateFare(rides);
         assertEquals(30, fare, 0.0);
+    }
+
+    @Test
+    public void givenMultipleRidesShouldReturnRideSummary()
+    {
+        Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
+        InvoiceSummury summary = invoiceGenerator.getInvoiceSummary(rides);
+        InvoiceSummury expectedSummary = new InvoiceSummury(2, 30.0);
+        assertEquals(expectedSummary, summary);
     }
 }

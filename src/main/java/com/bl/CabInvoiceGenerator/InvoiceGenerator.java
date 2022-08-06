@@ -1,10 +1,12 @@
 package com.bl.CabInvoiceGenerator;
 
-public class InvoiceGenerator {
+public class InvoiceGenerator
+{
 
     private static final int COST_PER_TIME = 1;
     private static final double COST_PER_KM = 10;
     private static final double MINIMUM_FARE = 5;
+
 
     public double calculateFare(double distance, int time)
     {
@@ -18,6 +20,14 @@ public class InvoiceGenerator {
             totalFare += calculateFare(ride.getDistance(), ride.getTime());
         }
         return totalFare;
+    }
+
+
+    public InvoiceSummury getInvoiceSummary(Ride[] rides)
+    {
+        double totalFare = calculateFare(rides);
+        int numOfRides = rides.length;
+        return new InvoiceSummury(numOfRides, totalFare);
     }
 
 }

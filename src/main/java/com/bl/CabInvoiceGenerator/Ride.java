@@ -1,9 +1,10 @@
 package com.bl.CabInvoiceGenerator;
 
-public class Ride
-{
+public class Ride {
+
     private double distance;
     private int time;
+
 
     public Ride(double distance, int time)
     {
@@ -21,11 +22,13 @@ public class Ride
         this.distance = distance;
     }
 
-    public int getTime() {
+    public int getTime()
+    {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(int time)
+    {
         this.time = time;
     }
 }
